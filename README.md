@@ -1,2 +1,2 @@
 # echo-tutorial
-Echo framework tutorial
+Тестовый проект веб-приложения на Go

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Snippet #{{ snippet.ID }}
+{% endblock %}
+
+{% block content %}
+<div class='snippet'>
+    <div class='metadata'>
+        <strong>{{ snippet.Title }}</strong>
+        <span>#{{ snippet.ID }}</span>
+    </div>
+    <pre><code>{{ snippet.Content }}</code></pre>
+    <div class='metadata'>
+        <time>Created At: {{ snippet.CreatedAt.Format("02 Jan 06 15:04") }}</time>
+        <time>Expires At: {{ snippet.ExpiresAt.Format("02 Jan 06 15:04") }}</time>
+    </div>
+</div>
+{% endblock %}

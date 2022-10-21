@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Snippetbox
+{% endblock %}
+
+{% block content %}
+<h1>Home</h1>
+<h2>Last snippets:</h2>
+{% for snippet in snippets %}
+<div class='snippet'>
+    <div class='metadata'>
+        <strong>{{ snippet.Title }}</strong>
+        <span><a href="/snippet?id={{ snippet.ID }}">#{{ snippet.ID }}</a></span>
+    </div>
+    <pre><code>{{ snippet.Content }}</code></pre>
+    <div class='metadata'>
+        <time>Created At: {{ snippet.CreatedAt.Format("02 Jan 06 15:04") }}</time>
+        <time>Expires At: {{ snippet.ExpiresAt.Format("02 Jan 06 15:04") }}</time>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}
